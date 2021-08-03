@@ -1,10 +1,11 @@
 {
-  "name": "docsify-graghviz",
+  "name": "docsify-graphviz",
   "version": "0.0.1",
   "description": "A docsify plugin to render DOT graphs using Graphviz.",
   "main": "src/docsify-graphviz.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir -p dist && cp src/docsify-graphviz.js dist/"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,11 @@
     "hpcc-js",
     "graphviz",
     "docsify"
+  ],
+  "files": [
+    "README.md",
+    "src/",
+    "dist/"
   ],
   "author": "cherrot",
   "license": "MIT",
