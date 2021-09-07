@@ -1,6 +1,6 @@
 {
   "name": "docsify-graphviz",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A docsify plugin to render DOT graphs using Graphviz.",
   "main": "src/docsify-graphviz.js",
   "scripts": {

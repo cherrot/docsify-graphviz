@@ -16,18 +16,13 @@ function install(hook, vm) {
     // someKey: 'someVal',
   }, vm.config.graphviz)
 
-  hook.afterEach(function (html, next) {
-    // We load the HTML inside a DOM node to allow for manipulation
-    var container = document.createElement('div');
-    container.innerHTML = html;
-
+  hook.doneEach(function () {
     promises = [];
-    container.querySelectorAll(SELECTOR).forEach(function (element) {
+    document.querySelectorAll(SELECTOR).forEach(function (element) {
       promises.push(hpccWasm.graphviz.layout(element.textContent, "svg", "dot").then(svg => {
         replace(svg, element);
       }).catch(err => console.error(err.message)));
     });
-    Promise.allSettled(promises).then(_ => next(container.innerHTML));
   });
 }
 
